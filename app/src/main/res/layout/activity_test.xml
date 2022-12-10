@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Test">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_sign_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:layout_marginTop="62dp"
+                android:gravity="center"
+                android:text="Sign Up"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            Profile picture Image View-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/text_sign_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="50dp"
+                tools:srcCompat="@tools:sample/avatars"
+                android:src="@drawable/ic_baseline_person_pin_24"
+                android:scaleType="fitXY"
+                app:shapeAppearanceOverlay="@style/circleImageView"
+                app:strokeWidth="1dp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_uploadProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="Select Profile"
+                android:textAllCaps="false"
+                android:textSize="10sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView_profile"
+                />
+
+
+            <!--            TextField for First Name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFiled_firstname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="32dp"
+                android:hint="First Name"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_uploadProfile"
+                app:startIconDrawable="@drawable/ic_sharp_person_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            TextField for Last Name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFiled_lastname"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Last Name"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFiled_firstname"
+                app:startIconDrawable="@drawable/ic_sharp_person_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            TextFiled for Email id-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFiled_emailid"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Email id"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFiled_lastname"
+                app:startIconDrawable="@drawable/ic_baseline_email_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            TextFiled for Mobile No-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFiled_mobileNo"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Mobile No"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="clear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFiled_emailid"
+                app:startIconDrawable="@drawable/ic_baseline_call_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            TextFiled for DOB-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput_dob"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Date of Birth"
+                app:boxBackgroundMode="outline"
+                app:endIconDrawable="@drawable/ic_baseline_date_range_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFiled_mobileNo"
+                app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/autoComplete_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            TextFiled for Gender-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput_gender"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Gender"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="dropdown_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInput_dob"
+                app:startIconDrawable="@drawable/ic_sharp_person_24">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/autoComplete_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--  Autocomplete TextView for Language-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput_language"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Language"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="dropdown_menu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInput_gender"
+                app:startIconDrawable="@drawable/ic_baseline_language_24">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/autoComplete_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            TextFiled password-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFiled_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Password"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textInput_language"
+                app:startIconDrawable="@drawable/ic_baseline_vpn_key_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            TextFiled Confirm password-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textFiled_confirmPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Confirm Password"
+                app:boxBackgroundMode="outline"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFiled_password"
+                app:startIconDrawable="@drawable/ic_baseline_vpn_key_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            Sign Up Button-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_signUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="32dp"
+                android:padding="10dp"
+                android:text="Sign Up"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textFiled_confirmPassword" />
+
+            <!--            Already Have an account-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/button_signIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center"
+                android:text="Already have an account ? Sign In"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_signUp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
