@@ -49,7 +49,6 @@ public class Test extends AppCompatActivity {
     ActivityResultLauncher<String> mTakePhoto;
     ActivityResultLauncher<Intent> CTakePhoto;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +65,7 @@ public class Test extends AppCompatActivity {
 
         // [Validation]
 
-        layoutFirstName.setI
+
 
 
 

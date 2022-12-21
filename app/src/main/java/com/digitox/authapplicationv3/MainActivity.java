@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Calling Test
 
-        Intent intent = new Intent(getApplicationContext(), Test.class);
-        startActivity(intent);
-        finish();
+//        Intent intent = new Intent(getApplicationContext(), Test.class);
+//        startActivity(intent);
+//        finish();
 
         //
 
@@ -239,8 +239,6 @@ public class MainActivity extends AppCompatActivity {
         String password = passwordText.getText().toString();
 
         manualSignIn(username, password);
-
-        //usernameText.setError("Please enter Username");
 
 //        usernameLayout.setError("Please enter Username");
 //

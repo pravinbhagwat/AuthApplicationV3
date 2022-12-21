@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class WelcomeActivity extends AppCompatActivity {
 
     MaterialTextView textViewName, textViewEmail;
-    MaterialButton buttonSignOut;
+    MaterialButton buttonSignOut, buttonLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class WelcomeActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.text_name);
         textViewEmail = findViewById(R.id.text_emailId);
         buttonSignOut = findViewById(R.id.button_signOut);
+        buttonLocation  = findViewById(R.id.button_location);
 
         FirebaseAuth.getInstance();
         textViewName.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
@@ -34,6 +35,14 @@ public class WelcomeActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 finish();
+            }
+        });
+
+        buttonLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
             }
         });
     }
