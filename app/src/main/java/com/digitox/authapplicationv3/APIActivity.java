@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.digitox.authapplicationv3.pojo.MultipleResource;
+import com.digitox.authapplicationv3.pojo.UserList;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import retrofit2.Response;
 
 public class APIActivity extends AppCompatActivity {
 
-    MaterialTextView text_data;
+    MaterialTextView text_data, text_UserData;
     APIInterface apiInterface;
 
     @Override
@@ -25,7 +26,9 @@ public class APIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_apiactivity);
 
         text_data = findViewById(R.id.textView_data);
+        text_UserData = findViewById(R.id.textView_userdata);
         apiInterface = APIClient.getClient().create(APIInterface.class);
+
 
 
         /**
@@ -82,34 +85,38 @@ public class APIActivity extends AppCompatActivity {
 //            }
 //        });
 //
-//        /**
-//         GET List Users
-//         **/
-//        Call<UserList> call2 = apiInterface.doGetUserList("2");
-//        call2.enqueue(new Callback<UserList>() {
-//            @Override
-//            public void onResponse(Call<UserList> call, Response<UserList> response) {
-//
-//                UserList userList = response.body();
-//                Integer text = userList.page;
-//                Integer total = userList.total;
-//                Integer totalPages = userList.totalPages;
-//                List<UserList.Datum> datumList = userList.data;
-//                Toast.makeText(getApplicationContext(), text + " page\n" + total + " total\n" + totalPages + " totalPages\n", Toast.LENGTH_SHORT).show();
-//
-//                for (UserList.Datum datum : datumList) {
-//                    Toast.makeText(getApplicationContext(), "id : " + datum.id + " name: " + datum.first_name + " " + datum.last_name + " avatar: " + datum.avatar, Toast.LENGTH_SHORT).show();
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UserList> call, Throwable t) {
-//                call.cancel();
-//            }
-//        });
-//
+        /**
+         GET List Users
+         **/
+        Call<UserList> call2 = apiInterface.doGetUserList("2");
+        call2.enqueue(new Callback<UserList>() {
+            @Override
+            public void onResponse(Call<UserList> call, Response<UserList> response) {
+
+                String userListData = "\n\nGet All Users from Page No - 2:";
+                UserList userList = response.body();
+                Integer text = userList.page;
+                Integer total = userList.total;
+                Integer totalPages = userList.totalPages;
+                List<UserList.Datum> datumList = userList.data;
+                //Toast.makeText(getApplicationContext(), text + " page\n" + total + " total\n" + totalPages + " totalPages\n", Toast.LENGTH_SHORT).show();
+                userListData += "\n\nPage no - "+text;
+
+                for (UserList.Datum datum : datumList) {
+                    //Toast.makeText(getApplicationContext(), "id : " + datum.id + " name: " + datum.first_name + " " + datum.last_name + " avatar: " + datum.avatar, Toast.LENGTH_SHORT).show();
+                    userListData += "\n\nId - "+ datum.id + "\nFirst Name - " +datum.first_name + "\nLast name - "+datum.last_name + "\nEmail id - "+datum.email;
+                }
+
+                text_UserData.setText(userListData);
+
+            }
+
+            @Override
+            public void onFailure(Call<UserList> call, Throwable t) {
+                call.cancel();
+            }
+        });
+
 //
 //        /**
 //         POST name and job Url encoded.

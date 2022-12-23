@@ -22,6 +22,8 @@ public class UserList {
 
         @SerializedName("id")
         public Integer id;
+        @SerializedName("email")
+        public String email;
         @SerializedName("first_name")
         public String first_name;
         @SerializedName("last_name")
