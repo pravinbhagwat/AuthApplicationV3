@@ -1,4 +1,4 @@
-package com.digitox.authapplicationv3;
+package com.digitox.authapplicationv3.API_Controller;
 
 import com.digitox.authapplicationv3.pojo.MultipleResource;
 import com.digitox.authapplicationv3.pojo.User;

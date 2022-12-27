@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Calling APIActivity
 
-        Intent intent = new Intent(getApplicationContext(), APIActivity.class);
-        startActivity(intent);
-        finish();
+//        Intent intent = new Intent(getApplicationContext(), APIActivity.class);
+//        startActivity(intent);
+//        finish();
 
         //
 

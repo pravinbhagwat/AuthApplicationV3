@@ -1,11 +1,13 @@
-package com.digitox.authapplicationv3;
+package com.digitox.authapplicationv3.API_Controller;
 
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.digitox.authapplicationv3.R;
 import com.digitox.authapplicationv3.pojo.MultipleResource;
+import com.digitox.authapplicationv3.pojo.User;
 import com.digitox.authapplicationv3.pojo.UserList;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -17,7 +19,7 @@ import retrofit2.Response;
 
 public class APIActivity extends AppCompatActivity {
 
-    MaterialTextView text_data, text_UserData;
+    MaterialTextView text_data, text_UserData, text_postUser;
     APIInterface apiInterface;
 
     @Override
@@ -27,6 +29,7 @@ public class APIActivity extends AppCompatActivity {
 
         text_data = findViewById(R.id.textView_data);
         text_UserData = findViewById(R.id.textView_userdata);
+        text_postUser = findViewById(R.id.textView_postUser);
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
 
@@ -68,23 +71,50 @@ public class APIActivity extends AppCompatActivity {
         /**
          Create new user
          **/
-//        User user = new User("morpheus", "leader");
-//        Call<User> call1 = apiInterface.createUser(user);
-//        call1.enqueue(new Callback<User>() {
-//            @Override
-//            public void onResponse(Call<User> call, Response<User> response) {
-//                User user1 = response.body();
-//
-//                Toast.makeText(getApplicationContext(), user1.name + " " + user1.job + " " + user1.id + " " + user1.createdAt, Toast.LENGTH_SHORT).show();
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<User> call, Throwable t) {
-//                call.cancel();
-//            }
-//        });
-//
+        User user = new User("morpheus", "leader");
+        Call<User> call1 = apiInterface.createUser(user);
+        call1.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                User user1 = response.body();
+                String newUser;
+                //Toast.makeText(getApplicationContext(), user1.name + " " + user1.job + " " + user1.id + " " + user1.createdAt, Toast.LENGTH_LONG).show();
+                newUser = "\n\nNew User Created Using POST method" + "\n\n New User Id -> " + user1.id + "\n New User Name -> " + user1.name + "\n Created at -> " + user1.createdAt;
+                text_postUser.setText(newUser);
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                call.cancel();
+            }
+        });
+
+        /**
+         //         POST name and job Url encoded.
+         //         **/
+
+        Call<UserList> call3 = apiInterface.doCreateUserWithField("morpheus","leader");
+        call3.enqueue(new Callback<UserList>() {
+            @Override
+            public void onResponse(Call<UserList> call, Response<UserList> response) {
+                UserList userList = response.body();
+                Integer text = userList.page;
+                Integer total = userList.total;
+                Integer totalPages = userList.totalPages;
+                List<UserList.Datum> datumList = userList.data;
+                //Toast.makeText(getApplicationContext(), text + " page\n" + total + " total\n" + totalPages + " totalPages\n", Toast.LENGTH_SHORT).show();
+
+                //
+
+
+            }
+
+            @Override
+            public void onFailure(Call<UserList> call, Throwable t) {
+                call.cancel();
+            }
+        });
+
         /**
          GET List Users
          **/
@@ -118,30 +148,6 @@ public class APIActivity extends AppCompatActivity {
         });
 
 //
-//        /**
-//         POST name and job Url encoded.
-//         **/
-//        Call<UserList> call3 = apiInterface.doCreateUserWithField("morpheus","leader");
-//        call3.enqueue(new Callback<UserList>() {
-//            @Override
-//            public void onResponse(Call<UserList> call, Response<UserList> response) {
-//                UserList userList = response.body();
-//                Integer text = userList.page;
-//                Integer total = userList.total;
-//                Integer totalPages = userList.totalPages;
-//                List<UserList.Datum> datumList = userList.data;
-//                Toast.makeText(getApplicationContext(), text + " page\n" + total + " total\n" + totalPages + " totalPages\n", Toast.LENGTH_SHORT).show();
 //
-//                for (UserList.Datum datum : datumList) {
-//                    Toast.makeText(getApplicationContext(), "id : " + datum.id + " name: " + datum.first_name + " " + datum.last_name + " avatar: " + datum.avatar, Toast.LENGTH_SHORT).show();
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<UserList> call, Throwable t) {
-//                call.cancel();
-//            }
-//        });
     }
 }
