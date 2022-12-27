@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Calling APIActivity
 
-//        Intent intent = new Intent(getApplicationContext(), APIActivity.class);
-//        startActivity(intent);
-//        finish();
+        Intent intent = new Intent(getApplicationContext(), APIActivity2.class);
+        startActivity(intent);
+        finish();
 
         //
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        usernameText = findViewById(R.id.textInput_username);
+        usernameText = findViewById(R.id.textInput_emailId);
         passwordText = findViewById(R.id.textInput_password);
         signInButton = findViewById(R.id.button_signIn);
         signUpTextView = findViewById(R.id.button_signUp);

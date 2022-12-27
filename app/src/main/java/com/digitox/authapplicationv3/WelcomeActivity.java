@@ -41,7 +41,7 @@ public class WelcomeActivity extends AppCompatActivity {
         buttonAPI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), APIActivity2.class);
                 startActivity(intent);
             }
         });
