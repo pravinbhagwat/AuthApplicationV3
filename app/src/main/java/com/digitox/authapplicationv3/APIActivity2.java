@@ -83,14 +83,25 @@ public class APIActivity2 extends AppCompatActivity {
         // Api is a class in which we define a method getClient() that returns the API Interface class object
         // registration is a POST request type method in which we are sending our field's data
         // enqueue is used for callback response and error
-        (APIClient2.getClient().registration(fullNameText.getText().toString().trim(),
-                emailId.getText().toString().trim(),
-                passwordText.getText().toString().trim(),
-                "email")).enqueue(new Callback<SignUpResponse>() {
+//        (APIClient2.getClient().registration(fullNameText.getText().toString().trim(),
+//                emailId.getText().toString().trim(),
+//                passwordText.getText().toString().trim(),
+//                "email")).enqueue(new Callback<SignUpResponse>() {
+//            @Override
+//            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
+//                signUpResponsesData = response.body();
+//                Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+//                progressDialog.dismiss();
+//
+//            }
+
+        (APIClient2.getClient().registration(emailId.getText().toString().trim(),
+                passwordText.getText().toString().trim())).enqueue(new Callback<SignUpResponse>() {
             @Override
             public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                 signUpResponsesData = response.body();
-                Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_LONG).show();
+                String msg = "New user Created with ID - "+signUpResponsesData.getId().toString()+ "\nEmail Id - "+emailId.getText().toString().trim();
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();
 
             }

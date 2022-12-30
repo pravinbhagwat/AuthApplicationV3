@@ -10,7 +10,7 @@ public class APIClient2 {
         // change your base URL
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://mobileappdatabase.in/")
+                    .baseUrl("https://reqres.in/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
