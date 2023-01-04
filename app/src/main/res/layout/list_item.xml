@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#73C850"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewUserId"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="User id : "
+                android:textStyle="bold"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/userId"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintStart_toEndOf="@id/textViewUserId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/id"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Id : "
+                android:textStyle="bold"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUserId"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/Id"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintStart_toEndOf="@id/id"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userId"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textTitle"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Title : "
+                android:textStyle="bold"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/userTitle"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintStart_toEndOf="@id/textTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Id"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textWebpage"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="User Webpage "
+                android:textStyle="bold"
+                android:padding="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/userBody"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintStart_toEndOf="@id/textWebpage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userTitle"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
