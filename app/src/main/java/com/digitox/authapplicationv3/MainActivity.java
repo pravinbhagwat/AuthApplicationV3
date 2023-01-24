@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Calling APIActivity
 
-        Intent intent = new Intent(getApplicationContext(), RecyclerViewActivity.class);
+        Intent intent = new Intent(getApplicationContext(), RecyclerDataPassing.class);
         startActivity(intent);
         finish();
 
